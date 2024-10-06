@@ -2,63 +2,53 @@ public class Main {
     public static void main(String[] args) {
 
         // Задача 1
-        for (int i = 1; i<11; i++) {
-            System.out.println("Итерация " + i);
+        int points = 10;
+        do {
+            System.out.println("Осталось" + points + " баллов");
+            points--;
+        } while (points >= 0);
+        System.out.println("Игра окончена");
+
+        int savings = 15_000;
+        int total = 0;
+        int i = 1;
+        while (total < 2_459_000) {
+            total = total + total / 100;
+            total = total + savings;
+            System.out.println("Месяц " + i++ + " сумма накоплений равна " + total + "рублей");
         }
 
         // Задача 2
-        for (int i = 10; i > 0; i-- ){
-            System.out.println("Число " + i);
+        i = 1;
+        while (i <= 10) {
+            System.out.print(i + " ");
+            i++;
         }
+        System.out.println();
+
+        for (int j = 10; j >= 1; j--) {
+            System.out.print(j + " ");
+        }
+        System.out.println();
 
         // Задача 3
-        for (int i =0; i<17; i = i + 2 ){
-            System.out.println(i);
+        int initialPopulation = 12000000; // Население 12 миллионов
+        double birthRate = 17.0 / 1000.0;  // Рождаемость на 1000
+        double deathRate = 8.0 / 1000.0;   // Смертность на 1000
+
+        // Расчет численности населения каждый год
+        for (int year = 1; year <= 10; year++) {
+            // Вычисление прироста населения
+            int births = (int) (initialPopulation * birthRate);
+            int deaths = (int) (initialPopulation * deathRate);
+            initialPopulation += (births - deaths); // Обновляем численность населения
+
+            // Вывод результата для текущего года
+            System.out.println("Год " + year + ", численность населения составляет " + initialPopulation);
         }
 
-        // Задача 4
-        for (int i = 10; i> - 10; i = i - 1){
-            System.out.println(i);
-        }
+        //Задача 4
 
-        // Задача 5
-        for (int i = 1904; i<2096; i = i + 4){
-            System.out.println(i+ " год является високосным");
-        }
-
-        // Задача 6
-        for (int i = 7; i<= 98; i = i + 7){
-            System.out.println(i);
-        }
-
-        // Задача 7
-        for (int i = 1; i<= 512; i = i * 2){
-            System.out.println(i);
-        }
-
-        // Задача 8
-        int salary = 29000;
-        int total = 0;
-        for (int i = 0; i < 12; i++) {
-            total = total + salary;
-            System.out.println("Месяц " + i + " Итого " + total);
-        }
-        System.out.println(total);
-
-        // Задача 9
-        salary = 29000;
-        total = 0;
-        for (int i = 0; i < 12; i++) {
-            total = total + salary;
-            total = total + total / 100;
-            System.out.println("Месяц " + i + " Итого " + total);
-        }
-        System.out.println(total);
-
-        // Задача 10
-        int number = 2;
-                for (int i = 1; i <= 10; i++) {
-                System.out.println(number + " x " + i + " = " + ( i * number ));
-            }
-        }
     }
+    }
+
