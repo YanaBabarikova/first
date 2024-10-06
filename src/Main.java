@@ -2,75 +2,88 @@ public class Main {
     public static void main(String[] args) {
 
         //Задача 1
-        int score = 18;
-        if (score <= 18) {
-            System.out.println("Вы совершеннолетний!");
-        } else {
-            System.out.println("Возвраст совершеннолетия ещё не достигнут, нужно подождать!");
+        int clientOS = 0;
+        switch (clientOS) {
+            case 1:
+                System.out.println("Установите версию приложения для Android по ссылке");
+                break;
+            case 0:
+                System.out.println("Установите версию приложения для iOS по ссылке");
+                break;
+            default:
+                System.out.println("Не удалось инициализировать тип Вашего устройства");
         }
 
         //Задача 2
-        int temperature = 3;
-        if (temperature <= 5) {
-            System.out.println("На улице" + temperature + "  надеть шапку!");
+        int yearPhone = 2017;
+        int clientPhone = 0;
+        if (clientPhone == 0 && yearPhone < 2015) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        } else if (clientPhone == 1 && yearPhone < 2015) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else if (clientPhone == 1 && yearPhone > 2015) {
+            System.out.println("Установите версию приложения для Android по ссылке");
         } else {
-            System.out.println("Сегодня" + temperature + " можно идти без шапки!");
+            System.out.println("Установите версию приложения для iOS по ссылке");
         }
 
         //Задача 3
-        int speed = 49;
-        if (speed >= 60) {
-            System.out.println("Если скорость " + speed + " придется заплатить штраф");
-        } else {
-            System.out.println("Если скорость " + speed + " можно ездить спокойно");
+        int year = 2018;
+        int remainder = year % 4;
+        if (remainder > 0 && year > 1584) {
+            System.out.println(year + " год - не високосный");
+        }
+        else if (remainder==0 && year > 1584) {
+            System.out.println(year + " год - високодский");
+        }
+        else {System.out.println("Високосный год ввели после 1584 года");
         }
 
         //Задача 4
-        int ageForActivity = 12;
-        if (ageForActivity < 2) {
-            System.out.println("В таком возврасте ещё никуда не ходят");
-        } else if (ageForActivity >= 2 && ageForActivity <= 6) {
-            System.out.println("В " + ageForActivity + " ходят в детский сад");
-        } else if (ageForActivity >= 7 && ageForActivity <= 17) {
-            System.out.println("В " + ageForActivity + " ходят в школу");
-        } else if (ageForActivity >= 18 && ageForActivity <= 24) {
-            System.out.println("В " + ageForActivity + " ходят в университет");
-        } else {
-            System.out.println("В " + ageForActivity + " пора ходить на работу");
+        int deliveryDistance = 100;
+        if (deliveryDistance <= 20){
+            System.out.println("Для того чтобы доставить карту потребуется 1 сутки");
+        }
+        else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            System.out.println("Для того чтобы доставить карту потребуется 2 суток");
+        }
+        else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            System.out.println("Для того чтобы доставить карту потребуется 3 суток");
+        }
+        else {
+            System.out.println("Свыше 100 км от офиса банка доставка невозможна");
         }
 
         //Задача 5
-        int ageForAttractions = 3;
-        if (ageForAttractions < 5) {
-            System.out.println("Если возвраст ребенка равен " + ageForAttractions + ", то ему нельзя кататься на аттракционе");
-        } else if (ageForActivity > 5 && ageForActivity < 14) {
-            System.out.println("Если возвраст ребенка равен " + ageForAttractions + ", то ему можно кататься на аттракционе в сопровождении возрослого");
-        } else {
-            System.out.println("Если возвраст ребенка равен " + ageForAttractions + ", то ему можно кататься на аттракционе без сопровождения возрослого");
-        }
-
-        //Задача 6
-        int placeInTheCarriage = 102;
-        if (placeInTheCarriage > 60 && placeInTheCarriage <= 102) {
-            System.out.println("В вагоне остались только стоячие места");
-        } else if (placeInTheCarriage <= 60) {
-            System.out.println("В вагоне остались стоячие и сидячие места");
-        } else {
-            System.out.println("Вагон полностью забит");
-        }
-
-        //Задача 7
-        int one = 20;
-        int two = 2;
-        int three = 100;
-        if (one > two && one > three) {
-            System.out.println("Число " + one + " больше всех");
-        } else if (two > one && two > three) {
-            System.out.println("Число " + two + " больше всех");
-        } else if (three > one && three > two) {
-            System.out.println("Число " + three + " больше всех");
-        } else {
-            System.out.println("Числа равны");
+        int monthNumber = 7;
+        switch (monthNumber){
+            case 1:
+            case 2:
+            case 12: {
+                System.out.println("Это зима");
+            }
+            break;
+            case 3:
+            case 4:
+            case 5:{
+                System.out.println("Это весна");
+            }
+            break;
+            case 6:
+            case 7:
+            case 8: {
+                System.out.println("Это лето");
+            }
+            break;
+            case 9:
+            case 10:
+            case 11: {
+                System.out.println("Это осень");
+            }
+            break;
+            default: {
+                System.out.println("Введите номер месяца корректно");
+            }
         }
     }
 }
