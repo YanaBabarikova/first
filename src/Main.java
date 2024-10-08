@@ -33,22 +33,58 @@ public class Main {
 
         // Задача 3
         int initialPopulation = 12000000; // Население 12 миллионов
-        double birthRate = 17.0 / 1000.0;  // Рождаемость на 1000
-        double deathRate = 8.0 / 1000.0;   // Смертность на 1000
+        double birthRate = 17.0 / 1000;  // Рождаемость на 1000
+        double deathRate = 8.0 / 1000;   // Смертность на 1000
 
         // Расчет численности населения каждый год
         for (int year = 1; year <= 10; year++) {
             // Вычисление прироста населения
-            int births = (int) (initialPopulation * birthRate);
-            int deaths = (int) (initialPopulation * deathRate);
-            initialPopulation += (births - deaths); // Обновляем численность населения
+            int average = (int) ((initialPopulation * birthRate) - (initialPopulation * deathRate));
+            initialPopulation = average + initialPopulation;// Обновляем численность населения
 
             // Вывод результата для текущего года
             System.out.println("Год " + year + ", численность населения составляет " + initialPopulation);
         }
 
-        //Задача 4
+        //Задача 4-5
+        int money = 15_000;
+        int totaln = 0;
+        int h = 0;
+        for (; totaln < 12_000_000; h++) {
+            totaln = (int) (totaln + (totaln * 0.07));
+            totaln = totaln + money;
+            if (h % 6 == 0) {
+                System.out.println("Месяц " + h + " сумма накоплений равна " + totaln + " рублей");
+            }
+        }
+        System.out.println(totaln);
 
-    }
-    }
+        //Задача 6
+        int contribution = 15_000;
+        int totaly = 0;
+        int t = 0;
+        for (; t <= 108; t++) {
+            totaly = (int) (totaly + (totaly * 0.07));
+            totaly = totaly + contribution;
+            if (t % 6 == 0) {
+                System.out.println("Месяц " + t + " сумма накоплений равна " + totaly + " рублей");
+            }
+        }
+        System.out.println(totaly);
 
+        //Задача 7
+        int friday = 4;
+        for (; friday <= 31; friday = friday + 7) {
+            System.out.println("Сегодня " + friday + "-е число пятница нужно приготовить отчёт");
+        }
+        //Задача 8
+        int year = 2024;
+        int yearStarted = year - 200;
+        int yearStoped = year + 100;
+        do {  yearStarted = yearStarted + 1;
+            if (yearStarted % 79 == 0) {
+            System.out.println(yearStarted);}
+           }
+        while (yearStarted <yearStoped);
+         }
+}
