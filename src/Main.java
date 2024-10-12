@@ -51,21 +51,16 @@ public class Main {
 
         // Задача 4
                 char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-                // Сначала инвертируем массив по порядку
-                // с использованием двух указателей для обхода массива
                 int left = 0;
                 int right = reverseFullName.length - 1;
 
                 while (left < right) {
-                    // Обмениваем элементы на позициях left и right
                     char temp = reverseFullName[left];
                     reverseFullName[left] = reverseFullName[right];
                     reverseFullName[right] = temp;
                     left++;
                     right--;
                 }
-
-                // Теперь выводим массив символов в правильном порядке
                 System.out.println(new String(reverseFullName));
 
     }
