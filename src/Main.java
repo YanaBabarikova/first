@@ -22,10 +22,13 @@ public class Main {
 
         System.out.println();
 
-        for (int i = 0; i < (weight1.length + 1); i++) {
-            if (i % 2 == 1) {
-                System.out.print(i + "; ");}
+        for (int i = 1; i < (weight1.length + 1); i++) {
+            if (i % 2 == 0) {
+                System.out.print(i + "; ");
+            } else {
+                System.out.print(i + 1 + "; ");
             }
+        }
             System.out.println();
 
             // Массив с дробными числами
