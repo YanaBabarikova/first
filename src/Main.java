@@ -2,64 +2,71 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-
-        // Задача 1-2
-
-        // Целочисленный массив
-        int[] weight1 = new int[3];
-        weight1[0] = 1;
-        weight1[1] = 2;
-        weight1[2] = 3;
-        System.out.println(Arrays.toString(weight1));
-
-        for (int i = weight1.length; i >= 1; i--) {
-            if (i > 1) {
-                System.out.print(i + ", ");
-            } else {
-                System.out.print(i);
-            }
-        }
-
-        System.out.println();
-
-        for (int i = 1; i < (weight1.length + 1); i++) {
-            if (i % 2 == 0) {
-                System.out.print(i + "; ");
-            } else {
-                System.out.print(i + 1 + "; ");
-            }
-        }
-            System.out.println();
-
-            // Массив с дробными числами
-            double[] weight2 = new double[3];
-            weight2[0] = 1.57;
-            weight2[1] = 7.654;
-            weight2[2] = 9.986;
-            System.out.println(Arrays.toString(weight2));
-
-            for (int h = weight2.length; h >= 1; h--) {
-                if (h > 1) {
-                    System.out.print(h + ", ");
-                } else {
-                    System.out.print(h);
-                }
-            }
-
-            System.out.println();
-            // Произвольный массив
-            int[] weight3 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-            System.out.println(Arrays.toString(weight3));
-
-            for (int k = weight3.length; k >= 1; k--) {
-
-                if (k > 1) {
-                    System.out.print(k + ", ");
-                } else {
-                    System.out.print(k);
-                }
-            }
-
-
-        }
+        task1();
     }
+
+
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+    }
+    // Задача 1
+
+    public static void task1() {
+        int[] arr = generateRandomArray();
+        int total = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            total = total + arr[i];
+        }
+
+        System.out.println("Сумма трат за месяц составила " + total + " рублей");
+
+
+        // Задача 2
+
+        int maxArr = 99_000;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > maxArr) {
+                maxArr = arr[i];
+            }
+        }
+        System.out.println("Максимальная сумма составила " + maxArr + " рублей");
+
+        int minArr = 201_000;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < minArr) {
+                minArr = arr[i];
+            }
+        }
+        System.out.println("Минимальная сумма составиа " + minArr + " рублей");
+
+        // Задача 3
+        double averageArr = (double) total / (arr.length);
+        System.out.println("Средняя сумма трат за месяц составила " + averageArr + " рублей");
+
+        // Задача 4
+                char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+                // Сначала инвертируем массив по порядку
+                // с использованием двух указателей для обхода массива
+                int left = 0;
+                int right = reverseFullName.length - 1;
+
+                while (left < right) {
+                    // Обмениваем элементы на позициях left и right
+                    char temp = reverseFullName[left];
+                    reverseFullName[left] = reverseFullName[right];
+                    reverseFullName[right] = temp;
+                    left++;
+                    right--;
+                }
+
+                // Теперь выводим массив символов в правильном порядке
+                System.out.println(new String(reverseFullName));
+
+    }
+}
