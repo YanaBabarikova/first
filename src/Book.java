@@ -1,3 +1,5 @@
+import java.time.Year;
+
 public class Book {
   private String name;
   private int year;
@@ -16,10 +18,13 @@ public String getName(){
 public Author getAuthor(){
     return this.author;
 }
+public int getYear(){
+    return this.year;
+}
 
-    public int setYear(int year){
-    this.year = year;
-    return year;
+public int setYear(int year){
+this.year = year;
+return year;
     }
 
 }
