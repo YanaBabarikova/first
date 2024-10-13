@@ -12,8 +12,7 @@ public class Main {
         }
         return year;
     }
-    public static int phoneAndYear (int clientPhone){
-        int currentYear = LocalDate.now().getYear();
+    public static int phoneAndYear (int clientPhone, int currentYear){
         if (clientPhone == 0 && currentYear < 2015) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         } else if (clientPhone == 1 && currentYear < 2015) {
@@ -46,7 +45,7 @@ public class Main {
         leapYear(2024);
 
         // Задача 2
-        phoneAndYear(0);
+        phoneAndYear(0, 2017);
 
         // Задача 3
         deliveryDistance(110);
