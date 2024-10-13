@@ -26,14 +26,15 @@ public class Main {
         return clientPhone;
     }
     public static int deliveryDistance(int deliveryDistance){
+        int i = 1;
         if (deliveryDistance <= 20){
-            System.out.println("Для того чтобы доставить карту потребуется 1 сутки");
+            System.out.println("Для того чтобы доставить карту потребуется" + i + "сутки");
         }
         else if (deliveryDistance > 20 && deliveryDistance <= 60) {
-            System.out.println("Для того чтобы доставить карту потребуется 2 суток");
+            System.out.println("Для того чтобы доставить карту потребуется " + (i+1) + " суток");
         }
         else if (deliveryDistance > 60 && deliveryDistance <= 100) {
-            System.out.println("Для того чтобы доставить карту потребуется 3 суток");
+            System.out.println("Для того чтобы доставить карту потребуется " + (i+2) + " суток");
         }
         else {
             System.out.println("Свыше 100 км от офиса банка доставка невозможна");
@@ -49,7 +50,7 @@ public class Main {
         phoneAndYear(1, 2017);
 
         // Задача 3
-        deliveryDistance(60);
+        deliveryDistance(100);
 
 
 
