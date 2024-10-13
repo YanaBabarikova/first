@@ -13,9 +13,9 @@ public class Main {
         return year;
     }
     public static int phoneAndYear (int clientPhone, int currentYear){
-        if (clientPhone == 0 && currentYear < 2015) {
+        if (clientPhone == 0 && currentYear <= 2015) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (clientPhone == 1 && currentYear < 2015) {
+        } else if (clientPhone == 1 && currentYear <= 2015) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         } else if (clientPhone == 1 && currentYear > 2015) {
             System.out.println("Установите версию приложения для Android по ссылке");
@@ -46,7 +46,7 @@ public class Main {
         leapYear(2024);
 
         // Задача 2
-        phoneAndYear(13, 2017);
+        phoneAndYear(1, 2017);
 
         // Задача 3
         deliveryDistance(60);
