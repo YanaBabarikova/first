@@ -49,7 +49,7 @@ public class Main {
         phoneAndYear(0);
 
         // Задача 3
-        deliveryDistance(105);
+        deliveryDistance(110);
 
 
 
