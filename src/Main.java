@@ -2,59 +2,22 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        task1();
-    }
 
+        //Задача 1
+      String firstName = "Ivan ";
+      String middleName = "Ivanovich ";
+      String lastName = "Ivanov ";
+      String fullName = lastName + firstName + middleName;
+      System.out.println(fullName);
 
-    public static int[] generateRandomArray() {
-        java.util.Random random = new java.util.Random();
-        int[] arr = new int[30];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(100_000) + 100_000;
-        }
-        return arr;
-    }
-    // Задача 1
+      //Задача 2
+        String capitalLettersFullName = fullName.toUpperCase();
+        System.out.println( "Данные Ф.И. О. сотрудника для заполнения отчёта - " + capitalLettersFullName);
 
-    public static void task1() {
-        int[] arr = generateRandomArray();
-        int total = 0;
-
-        for (int i = 0; i < arr.length; i++) {
-            total = total + arr[i];
-        }
-
-        System.out.println("Сумма трат за месяц составила " + total + " рублей");
-
-
-        // Задача 2
-
-        int maxArr = 99_000;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > maxArr) {
-                maxArr = arr[i];
-            }
-        }
-        System.out.println("Максимальная сумма составила " + maxArr + " рублей");
-
-        int minArr = 201_000;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < minArr) {
-                minArr = arr[i];
-            }
-        }
-        System.out.println("Минимальная сумма составиа " + minArr + " рублей");
-
-        // Задача 3
-        double averageArr = (double) total / (arr.length);
-        System.out.println("Средняя сумма трат за месяц составила " + averageArr + " рублей");
-
-        // Задача 4
-                char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length;  i > 0; i--) {
-            System.out.print(reverseFullName[i-1]);
-
-        }
+        //Задача 3
+        fullName = "Иванов Семён Семёнович";
+        fullName = fullName.replace("ё", "е");
+        System.out.println("Данные Ф. И. О. сотрудника - " + fullName);
 
     }
 }
